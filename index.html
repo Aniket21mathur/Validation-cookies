@@ -42,7 +42,32 @@ City:-
 <p id="e-text"></p>
 <br>
 <input type="submit" name="submit">
-
 </form>
+<!--cookies-->
+<script language="javascript">
+			  function showvisits() 
+				 {   
+				
+				      var num = GtCke("num");
+				      if (num)
+				      {
+				       num = parseInt(num) + 1;
+				   }
+				      else {num = 1;} // came first time
+			
+				      if (num==1){ 
+				      	document.write("First visit!");
+				      }
+				      else{ 
+				      	document.write("You have visited this page " + num + " times.");
+				      }
+				 
+				  
+				      var today = new Date();
+				      today.setTime(today.getTime() + 365 * 24 * 60 * 60* 1000);
+				      SetCke("num", document.forms["theform"]["Username"].value, today);
+				  }
+				  showvisits();			 
+		</script>
 </body>
 </html>
